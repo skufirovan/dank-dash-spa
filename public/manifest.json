@@ -1,0 +1,9 @@
+{
+    "short_name": "Dank Dash",
+    "name": "Dank Dash",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff"
+  }
+  
