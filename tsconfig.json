@@ -15,7 +15,13 @@
         "forceConsistentCasingInFileNames": true,
         "resolveJsonModule": true,
         "allowJs": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "paths": {
+            "@images": ["src/assets/images"],
+            "@store": ["src/services/store"],
+            "@ui": ["src/components/ui"],
+        }
     },
     "outDir": "./dist/",
     "include": ["src/**/*"]

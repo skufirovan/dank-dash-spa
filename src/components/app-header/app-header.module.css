@@ -1,0 +1,25 @@
+.header {
+    background-color: #d8e4b7;
+}
+
+.container {
+    margin: 0 auto;
+    height: 15vh;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image {
+    padding: 14px 0 14px 10px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.navigation {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}

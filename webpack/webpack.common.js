@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 const HTMLWebpackPlugins = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -63,10 +62,15 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.jsx', '.tsx', '.ts', '.json'],
+        alias: {
+            '@images': path.resolve(__dirname, '..', './src/assets/images'),
+            '@store': path.resolve(__dirname, '..', './src/services/store'),
+            '@ui': path.resolve(__dirname, '..', './src/components/ui'),
+        }
     },
     plugins: [
         new HTMLWebpackPlugins({
-           template: path.resolve(__dirname, 'public/index.html')
+           template: path.resolve(__dirname, '..', 'public/index.html')
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
