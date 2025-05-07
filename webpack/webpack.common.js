@@ -1,7 +1,13 @@
 const path = require('path');
+const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
+const dotenv = require('dotenv');
 const HTMLWebpackPlugins = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+
+dotenv.config();
 
 const production = process.env.NODE_ENV === 'production'; 
 
@@ -63,9 +69,14 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.tsx', '.ts', '.json'],
         alias: {
+            '@components': path.resolve(__dirname, '..', './src/components'),
+            '@assets': path.resolve(__dirname, '..', './src/assets'),
             '@images': path.resolve(__dirname, '..', './src/assets/images'),
+            '@pages': path.resolve(__dirname, '..', './src/pages'),
+            '@slices': path.resolve(__dirname, '..', './src/services/slices'),
             '@store': path.resolve(__dirname, '..', './src/services/store'),
             '@ui': path.resolve(__dirname, '..', './src/components/ui'),
+            '@utils': path.resolve(__dirname, '..', './src/utils'),
         }
     },
     plugins: [
@@ -76,5 +87,14 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'static/styles/index.css',
         }),
+        new webpack.DefinePlugin({
+            'process.env.URL': JSON.stringify(process.env.URL),
+        }),
+        new Dotenv(),
+        new ESLintPlugin({
+            extensions: ['js', 'jsx', 'ts', 'tsx'],
+            emitWarning: true,
+            failOnError: false,
+          }),
     ],
 };

@@ -1,12 +1,14 @@
-import { Outlet } from "react-router-dom";
-import { AppHeader } from "../app-header/app-header";
+import { Outlet } from 'react-router-dom';
+import AppHeader from '@components/app-header/app-header';
 import * as s from './root.module.css';
 
-export const Root = () => {
-    return (
-        <div className={s.root}>
-            <AppHeader />
-            <Outlet />
-        </div>
-    )
-}
+const Root = () => {
+  return (
+    <div className={s.root}>
+      <AppHeader />
+      <Outlet />
+    </div>
+  );
+};
+
+export default Root;

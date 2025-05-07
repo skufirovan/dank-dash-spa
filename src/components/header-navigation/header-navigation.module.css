@@ -1,0 +1,54 @@
+@keyframes underline {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.nav {
+  margin: 0;
+}
+
+.list {
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  position: relative;
+  padding-bottom: 6px;
+  border: none;
+  background-color: transparent;
+  color: #374151;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #10b91d;
+}
+
+.active {
+  color: #10b91d;
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #10b91d;
+  animation: underline 0.3s ease;
+}
+
+.item {
+  margin: 0;
+}
