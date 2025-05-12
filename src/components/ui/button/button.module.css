@@ -1,0 +1,16 @@
+.UIButton {
+  padding: 0.6rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid rgb(19, 186, 130);
+  border-radius: 9999px;
+  cursor: pointer;
+  color: rgb(19, 186, 130);
+  font-size: 14px;
+  line-height: 1.25;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.UIButton:hover {
+  color: #fff;
+  background-color: rgb(19, 186, 130);
+}

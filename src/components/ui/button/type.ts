@@ -1,6 +1,6 @@
 export type TButtonProps = {
   title?: string;
-  onClick: () => void;
+  onClick?: () => void;
   className?: string;
   children?: React.ReactNode;
 };

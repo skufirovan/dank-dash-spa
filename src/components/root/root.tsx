@@ -6,7 +6,9 @@ const Root = () => {
   return (
     <div className={s.root}>
       <AppHeader />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 };

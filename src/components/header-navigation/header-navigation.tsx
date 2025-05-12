@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useSelector } from '@store';
+import { getSection } from '@slices/active-section';
+import { useNavigate } from 'react-router-dom';
 import * as s from './header-navigation.module.css';
 
 const HeaderNavigation = () => {
-  const [activeSection] = useState('home');
-  const sections = ['home', 'shop', 'about'];
+  const activeSection = useSelector(getSection);
+  const navigate = useNavigate();
+  const sections = ['home', 'about', 'shop'];
 
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  const handleScroll = (id: string) => {
+    navigate('/', { state: { scrollToId: id } });
   };
 
   return (
@@ -17,7 +20,7 @@ const HeaderNavigation = () => {
             <button
               type="button"
               className={`${s.link} ${activeSection === section ? s.active : ''}`}
-              onClick={() => scrollToSection(section)}
+              onClick={() => handleScroll(section)}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </button>

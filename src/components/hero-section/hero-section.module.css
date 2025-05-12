@@ -1,0 +1,51 @@
+.hero {
+  margin-bottom: 100px;
+  height: 600px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url('../../assets/images/hero-background-2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  margin-left: 10rem;
+  max-width: 36rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0 0 1.5rem 0;
+  font-family: 'Futura PT Light';
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.description {
+  margin: 0 0 2rem 0;
+  font-family: 'Futura PT Light';
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.75rem;
+}
+
+.button {
+  width: fit-content;
+  border: none;
+  color: #fff;
+  font-family: 'Futura PT Medium';
+  font-size: 1rem;
+  background-color: rgb(19, 186, 130);
+  transition: transform 0.3s ease-in-out;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: rgb(5, 150, 105);
+  transform: scale(1.05, 1.05);
+}

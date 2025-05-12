@@ -1,6 +1,28 @@
+.catalog {
+  margin: 0 auto;
+}
+
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
   gap: 15px;
+  row-gap: 25px;
   justify-content: space-evenly;
+}
+
+.title {
+  margin: 0 0 1rem;
+  text-align: center;
+  color: rgb(31 41 55);
+  font-family: 'Futura PT Demi';
+  font-size: 2rem;
+  line-height: 2.25rem;
+}
+
+.description {
+  margin: 0 0 4rem;
+  text-align: center;
+  color: rgb(75 85 99);
+  font-family: 'Futura PT Light';
+  font-size: 1.5rem;
 }

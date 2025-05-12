@@ -1,5 +1,6 @@
 import React from 'react';
 import { TProduct } from '@utils/types';
+import Button from '@components/ui/button/button';
 import * as s from './product-card.module.css';
 
 type ProductCardProps = {
@@ -17,9 +18,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <p className={s.description}>{product.description}</p>
         <div className={s.orderContainer}>
           <p className={s.price}>{product.price} ₽</p>
-          <button type="button" className={s.button}>
-            Добавить
-          </button>
+          <Button>Добавить</Button>
         </div>
       </div>
     </div>

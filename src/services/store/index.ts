@@ -6,10 +6,12 @@ import {
   useSelector as selectorHook,
 } from 'react-redux';
 
+import { activeSectionReducer } from '@slices/active-section';
 import { productsReducer } from '../slices/products';
 
 const rootReducer = combineReducers({
   products: productsReducer,
+  activeSection: activeSectionReducer,
 });
 
 export const store = configureStore({
