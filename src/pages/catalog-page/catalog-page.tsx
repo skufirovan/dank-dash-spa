@@ -3,6 +3,7 @@ import ProductList from '@components/product-list/product-list';
 import HeroSection from '@components/hero-section/hero-section';
 import { useEffect } from 'react';
 import { scrollToSection } from '@utils/utils';
+import AboutSection from '@components/about-section/about-section';
 import * as s from './catalog-page.module.css';
 
 export const CatalogPage = () => {
@@ -25,6 +26,7 @@ export const CatalogPage = () => {
   return (
     <div className={s.catalog}>
       <HeroSection />
+      <AboutSection />
       <ProductList />
     </div>
   );
