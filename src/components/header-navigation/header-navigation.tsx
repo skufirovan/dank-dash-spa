@@ -1,15 +1,21 @@
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from '@store';
 import { getSection } from '@slices/active-section';
-import { useNavigate } from 'react-router-dom';
+import { scrollToSection } from '@utils/utils';
 import * as s from './header-navigation.module.css';
 
 const HeaderNavigation = () => {
   const activeSection = useSelector(getSection);
+  const location = useLocation();
   const navigate = useNavigate();
   const sections = ['home', 'about', 'shop'];
 
   const handleScroll = (id: string) => {
-    navigate('/', { state: { scrollToId: id } });
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollToId: id } });
+    } else {
+      scrollToSection(id);
+    }
   };
 
   return (
