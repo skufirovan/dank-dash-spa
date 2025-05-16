@@ -3,7 +3,7 @@
   height: 600px;
   background:
     linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url('../../assets/images/hero-background-2.png');
+    url('../../assets/images/hero-background.png');
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
