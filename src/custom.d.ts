@@ -12,16 +12,16 @@ declare module '*.svg' {
 }
 
 declare module '*.png' {
-  const content: any;
+  const content: string;
   export default content;
 }
 
 declare module '*.jpg' {
-  const content: any;
+  const content: string;
   export default content;
 }
 
 declare module '*.json' {
-  const content: any;
+  const content: unknown;
   export default content;
 }
