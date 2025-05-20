@@ -1,0 +1,19 @@
+.signUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  color: #1f2937;
+  font-family: Futura PT Medium;
+  font-size: 1.2rem;
+  margin: 0 0 4rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #4b5563;
+  font-family: Futura PT Light;
+}

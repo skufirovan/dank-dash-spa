@@ -1,0 +1,21 @@
+.title {
+  margin: 0 0 2rem;
+  text-align: center;
+  color: rgb(31 41 55);
+  font-family: 'Futura PT Demi';
+  font-size: 2rem;
+  line-height: 2.25rem;
+}
+
+.text {
+  margin: 0 0 2rem;
+  text-align: start;
+  color: rgb(75 85 99);
+  font-family: 'Futura PT Light';
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.textMedium {
+  font-family: 'Futura PT Medium';
+}
