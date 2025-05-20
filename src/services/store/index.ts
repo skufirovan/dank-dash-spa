@@ -7,11 +7,15 @@ import {
 } from 'react-redux';
 
 import { activeSectionReducer } from '@slices/active-section';
+import { userReducer } from '@slices/user';
+import { registrationFormReducer } from '@services/slices/form';
 import { productsReducer } from '../slices/products';
 
 const rootReducer = combineReducers({
   products: productsReducer,
   activeSection: activeSectionReducer,
+  user: userReducer,
+  registrationForm: registrationFormReducer,
 });
 
 export const store = configureStore({

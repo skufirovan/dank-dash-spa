@@ -1,7 +1,4 @@
-export type TProduct = {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
+export type TFieldType<T> = {
+  field: keyof T;
+  value: string;
 };
