@@ -4,12 +4,17 @@ import HeroSection from '@components/hero-section/hero-section';
 import { useEffect } from 'react';
 import { scrollToSection } from '@utils/utils';
 import AboutSection from '@components/about-section/about-section';
+import { useDispatch } from '@services/store';
+import { fetchProducts } from '@services/slices/products';
 import * as s from './catalog-page.module.css';
 
 export const CatalogPage = () => {
+  const dispatch = useDispatch();
   const location = useLocation();
 
   useEffect(() => {
+    dispatch(fetchProducts());
+
     const id = location.state?.scrollToId;
     if (!id) return;
 
@@ -21,7 +26,7 @@ export const CatalogPage = () => {
     }
 
     window.history.replaceState({}, document.title);
-  }, [location.state]);
+  }, [location.state, dispatch]);
 
   return (
     <div className={s.catalog}>

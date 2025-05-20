@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, SerializedError } from '@reduxjs/toolkit';
 import { RootState } from '@store';
-import { getProductsApi } from '@utils/api';
-import { TProduct } from '@utils/types';
+import { TProduct } from '@models/IProduct';
+import { getProductsApi } from '@services/catalog-service/catalog-service';
 
 type TProductsState = {
   data: TProduct[];

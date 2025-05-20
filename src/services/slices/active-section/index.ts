@@ -6,7 +6,7 @@ type TActiveSectionState = {
 };
 
 const initialState: TActiveSectionState = {
-  section: 'home',
+  section: '',
 };
 
 const slice = createSlice({

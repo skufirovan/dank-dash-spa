@@ -1,6 +1,6 @@
 import React from 'react';
-import { TProduct } from '@utils/types';
 import Button from '@components/ui/button/button';
+import { TProduct } from '@models/IProduct';
 import * as s from './product-card.module.css';
 
 type ProductCardProps = {

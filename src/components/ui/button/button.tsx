@@ -1,9 +1,22 @@
-import { TButtonProps } from './type';
+import { ButtonHTMLAttributes } from 'react';
 import * as s from './button.module.css';
 
-const Button = ({ title, onClick, className, children }: TButtonProps) => {
+export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  title?: string;
+  onClick?: () => void;
+  className?: string;
+  children?: React.ReactNode;
+  disabled?: boolean;
+}
+
+const Button = ({ title, onClick, className, children, disabled }: IButtonProps) => {
   return (
-    <button type="button" className={`${className} ${s.UIButton}`} onClick={onClick}>
+    <button
+      type="button"
+      className={`${className} ${s.UIButton}`}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {title ?? children}
     </button>
   );
