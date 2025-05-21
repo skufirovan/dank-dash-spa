@@ -1,4 +1,4 @@
-import { TProduct } from '@models/IProduct';
+import { IProduct } from '@models/IProduct';
 
 const DDURL = process.env.URL;
 
@@ -10,7 +10,7 @@ export type TServerResponseStatus = { success: boolean };
 type TServerResponse<T> = TServerResponseStatus & T;
 
 type TProductsResponse = TServerResponse<{
-  data: TProduct[];
+  data: IProduct[];
 }>;
 
 export const getProductsApi = () =>

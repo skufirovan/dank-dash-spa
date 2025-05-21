@@ -1,10 +1,10 @@
 import React from 'react';
 import Button from '@components/ui/button/button';
-import { TProduct } from '@models/IProduct';
+import { IProduct } from '@models/IProduct';
 import * as s from './product-card.module.css';
 
 type ProductCardProps = {
-  product: TProduct;
+  product: IProduct;
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {

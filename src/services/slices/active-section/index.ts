@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '@store';
 
 type TActiveSectionState = {
   section: string;
@@ -25,7 +24,6 @@ const slice = createSlice({
   },
 });
 
-export const selectActiveSectionState = (state: RootState) => state.activeSection;
 export const { getSection } = slice.selectors;
 export const { setSection, resetSection } = slice.actions;
 export const activeSectionReducer = slice.reducer;
