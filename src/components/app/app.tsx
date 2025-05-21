@@ -10,6 +10,7 @@ import { SignUpPage } from '@pages/sign-up-page/sign-up-page';
 import { ProfilePage } from '@pages/profile-page/profile-page';
 import { ProtectedRoute } from '@components/protected-route/protected-route';
 import { SignInPage } from '@pages/sign-in-page/sign-in-page';
+import { CartPage } from '@pages/cart-page/cart-page';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -52,6 +53,7 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+          <Route path="/cart" element={<CartPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
