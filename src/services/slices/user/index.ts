@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice, isAnyOf, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { RootState } from '@store';
 import { IUser } from '@models/IUser';
 import { AuthResponse } from '@models/auth-response/AuthResponse';
 import AuthService from '../../auth-service/auth-service';
@@ -135,8 +134,7 @@ const slice = createSlice({
   },
 });
 
-export const selectUserState = (state: RootState) => state.user;
-export const { setAuth, setSending, setReceiving, setUser } = slice.actions;
-export const userReducer = slice.reducer;
 export const { userSelector, isAuthSelector, isSendingSelector, isReceivingSelector } =
   slice.selectors;
+export const { setAuth, setSending, setReceiving, setUser } = slice.actions;
+export const userReducer = slice.reducer;

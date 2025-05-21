@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice, SerializedError } from '@reduxjs/toolkit';
 import { RootState } from '@store';
-import { TProduct } from '@models/IProduct';
+import { IProduct } from '@models/IProduct';
 import { getProductsApi } from '@services/catalog-service/catalog-service';
 
 type TProductsState = {
-  data: TProduct[];
+  data: IProduct[];
   isLoading: boolean;
   error: null | SerializedError;
 };

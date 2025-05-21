@@ -11,3 +11,22 @@ export const scrollToSection = (id: string) => {
     });
   }
 };
+
+export const getProductWord = (count: number): string => {
+  const lastTwo = count % 100;
+  const lastOne = count % 10;
+
+  if (lastTwo >= 11 && lastTwo <= 19) {
+    return 'товаров';
+  }
+
+  if (lastOne === 1) {
+    return 'товар';
+  }
+
+  if (lastOne >= 2 && lastOne <= 4) {
+    return 'товара';
+  }
+
+  return 'товаров';
+};

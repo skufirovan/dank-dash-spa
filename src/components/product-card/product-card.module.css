@@ -11,7 +11,7 @@
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
 }
 
 .image {
@@ -30,16 +30,17 @@
 
 .name {
   margin: 0 0 8px;
-  color: #000;
-  font-family: 'Literata';
-  font-size: 18px;
+  color: #1f2937;
+  font-family: 'Futura PT Medium';
+  font-size: 24px;
   font-weight: 500;
   font-style: normal;
 }
 
 .description {
   margin: 0 0 16px;
-  font-family: 'Literata';
+  color: #4b5563;
+  font-family: 'Futura PT Light';
   font-size: 16px;
   font-weight: 400;
 }
@@ -53,8 +54,27 @@
 
 .price {
   margin: 0;
-  color: #000;
-  font-family: 'Literata';
+  color: #1f2937;
+  font-family: 'Futura PT Medium';
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.buttonContainer {
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  padding: 0.6rem 1rem;
+}
+
+.quantity {
+  margin: 0 10px;
+  color: #1f2937;
+  font-family: 'Futura PT Medium';
   font-size: 22px;
   line-height: 1.25;
 }
