@@ -1,7 +1,6 @@
 import { Navigate } from 'react-router';
 import { useSelector } from '@store';
-import { isReceivingSelector, userSelector } from '@services/slices/user';
-import Preloader from '@components/ui/preloader/preloader';
+import { userSelector } from '@services/slices/user';
 
 type ProtectedRouteProps = {
   onlyUnAuth?: boolean;
@@ -10,9 +9,6 @@ type ProtectedRouteProps = {
 
 export const ProtectedRoute = ({ onlyUnAuth, children }: ProtectedRouteProps) => {
   const user = useSelector(userSelector);
-  const isReceiving = useSelector(isReceivingSelector);
-
-  if (isReceiving) return <Preloader />;
 
   if (!onlyUnAuth && !user) {
     return <Navigate replace to="/sign-in" />;

@@ -16,6 +16,9 @@ const slice = createSlice({
     setSection: (state, action: PayloadAction<string>) => {
       state.section = action.payload;
     },
+    resetSection: (state) => {
+      state.section = '';
+    },
   },
   selectors: {
     getSection: (state) => state.section,
@@ -24,5 +27,5 @@ const slice = createSlice({
 
 export const selectActiveSectionState = (state: RootState) => state.activeSection;
 export const { getSection } = slice.selectors;
-export const { setSection } = slice.actions;
+export const { setSection, resetSection } = slice.actions;
 export const activeSectionReducer = slice.reducer;
