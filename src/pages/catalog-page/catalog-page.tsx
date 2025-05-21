@@ -6,6 +6,7 @@ import { scrollToSection } from '@utils/utils';
 import AboutSection from '@components/about-section/about-section';
 import { useDispatch } from '@services/store';
 import { fetchProducts } from '@services/slices/products';
+import { resetSection } from '@services/slices/active-section';
 import * as s from './catalog-page.module.css';
 
 export const CatalogPage = () => {
@@ -27,6 +28,12 @@ export const CatalogPage = () => {
 
     window.history.replaceState({}, document.title);
   }, [location.state, dispatch]);
+
+  useEffect(() => {
+    return () => {
+      dispatch(resetSection());
+    };
+  });
 
   return (
     <div className={s.catalog}>

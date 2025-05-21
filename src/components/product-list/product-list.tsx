@@ -13,7 +13,6 @@ const ProductList = () => {
 
   useSectionObserver({ id: 'shop', ref: sectionRef });
 
-  if (isLoading) return <Preloader />;
   if (error) return <ErrorMessage message={error.message ?? 'Неизвестная ошибка'} />;
 
   return (
@@ -22,11 +21,15 @@ const ProductList = () => {
       <p className={s.description}>
         Откройте для себя свежесобранную микрозелень — идеальное дополнение к любому блюду.
       </p>
-      <div className={s.gridContainer}>
-        {data.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <div className={s.gridContainer}>
+          {data.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      )}
     </section>
   );
 };

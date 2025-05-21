@@ -9,6 +9,7 @@ import {
 import { activeSectionReducer } from '@slices/active-section';
 import { userReducer } from '@slices/user';
 import { registrationFormReducer } from '@services/slices/form';
+import { cartReducer } from '@services/slices/cart';
 import { productsReducer } from '../slices/products';
 
 const rootReducer = combineReducers({
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   activeSection: activeSectionReducer,
   user: userReducer,
   registrationForm: registrationFormReducer,
+  cart: cartReducer,
 });
 
 export const store = configureStore({

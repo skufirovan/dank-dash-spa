@@ -29,7 +29,6 @@ const slice = createSlice({
   },
 });
 
-export const { reducer } = slice;
+export const { sendErrorSelector, formSelector } = slice.selectors;
 export const { setFormValue } = slice.actions;
 export const registrationFormReducer = slice.reducer;
-export const { sendErrorSelector, formSelector } = slice.selectors;
