@@ -8,15 +8,17 @@ import {
 
 import { activeSectionReducer } from '@slices/active-section';
 import { userReducer } from '@slices/user';
-import { registrationFormReducer } from '@services/slices/form';
+import { authFormReducer } from '@services/slices/auth-form';
 import { cartReducer } from '@services/slices/cart';
+import { orderFormReducer } from '@services/slices/order-form';
 import { productsReducer } from '../slices/products';
 
 const rootReducer = combineReducers({
   products: productsReducer,
   activeSection: activeSectionReducer,
   user: userReducer,
-  registrationForm: registrationFormReducer,
+  authForm: authFormReducer,
+  orderForm: orderFormReducer,
   cart: cartReducer,
 });
 

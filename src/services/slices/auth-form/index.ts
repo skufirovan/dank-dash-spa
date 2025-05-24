@@ -2,12 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TFieldType } from '@utils/types';
 import { LoginPayload } from '@slices/user';
 
-type TRegistrationFormState = {
+type TAuthFormState = {
   form: LoginPayload;
   error: string | null;
 };
 
-const initialState: TRegistrationFormState = {
+const initialState: TAuthFormState = {
   form: {
     email: '',
     password: '',
@@ -16,7 +16,7 @@ const initialState: TRegistrationFormState = {
 };
 
 const slice = createSlice({
-  name: 'registrationForm',
+  name: 'authForm',
   initialState,
   reducers: {
     setFormValue: (state, action: PayloadAction<TFieldType<LoginPayload>>) => {
@@ -31,4 +31,4 @@ const slice = createSlice({
 
 export const { sendErrorSelector, formSelector } = slice.selectors;
 export const { setFormValue } = slice.actions;
-export const registrationFormReducer = slice.reducer;
+export const authFormReducer = slice.reducer;

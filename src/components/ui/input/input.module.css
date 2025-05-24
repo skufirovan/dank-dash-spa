@@ -9,7 +9,6 @@
 .input {
   margin: 0 0 4px;
   padding: 4px 8px;
-  width: 200px;
   text-align: start;
   font-family: 'Futura PT Light';
   font-size: 1.2rem;
@@ -17,7 +16,17 @@
 }
 
 .span {
-  margin: 0 0 18px;
+  visibility: visible;
+  margin: 0 0 4px;
   color: rgb(216, 58, 58);
   text-align: start;
+  font-size: 1rem;
+}
+
+.spanHidden {
+  visibility: hidden;
+  margin: 0 0 4px;
+  color: rgb(216, 58, 58);
+  text-align: start;
+  font-size: 1rem;
 }
