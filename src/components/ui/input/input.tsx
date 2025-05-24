@@ -4,25 +4,38 @@ import * as s from './input.module.css';
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   inputRef?: ForwardedRef<HTMLInputElement>;
   error?: string;
+  label?: string;
   value?: string;
-  className?: string;
+  labelClassName?: string;
+  inputClassName?: string;
   id?: string;
 }
 
-export const Input = ({
+const Input = ({
   inputRef,
-  error = '',
-  value = '',
-  className,
-  id = '',
+  error,
+  value,
+  label,
+  labelClassName,
+  inputClassName,
+  id,
   ...props
 }: InputProps) => {
   const randomId = useId();
 
   return (
-    <label className={`${className} ${s.label}`} htmlFor={id}>
-      <input id={id || randomId} className={s.input} ref={inputRef} {...props} value={value} />
-      <span className={s.span}>{error || ''}</span>
+    <label className={`${labelClassName} ${s.label}`} htmlFor={id}>
+      {label}
+      <input
+        id={id || randomId}
+        className={`${s.input} ${inputClassName}`}
+        ref={inputRef}
+        {...props}
+        value={value}
+      />
+      <span className={value?.length && error ? s.span : s.spanHidden}>{error || '1'}</span>
     </label>
   );
 };
+
+export default Input;

@@ -30,3 +30,29 @@ export const getProductWord = (count: number): string => {
 
   return 'товаров';
 };
+
+export const isISODate = (dateString: string): boolean => {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(dateString)) {
+    return false;
+  }
+
+  return true;
+};
+
+export const validateDate = (dateString: string): boolean => {
+  if (!isISODate(dateString)) {
+    return false;
+  }
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const inputDate = new Date(dateString);
+  inputDate.setHours(0, 0, 0, 0);
+
+  if (inputDate < today) {
+    return false;
+  }
+
+  return true;
+};

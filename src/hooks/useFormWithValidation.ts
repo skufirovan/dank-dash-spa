@@ -8,7 +8,7 @@ type TUseFormWithValidation<T> = {
   values: T;
   handleChange: (evt: ChangeEvent<HTMLInputElement>) => void;
   errors: TErrorState<T>;
-  isValid: boolean;
+  isErrors: () => boolean;
 };
 
 function initError<T>(a: T): TErrorState<T> {
@@ -28,6 +28,17 @@ export function useFormWithValidation<T>(
   const [isValid, setIsValid] = React.useState(false);
   const dispatch = useDispatch();
 
+  React.useEffect(() => {
+    const initialErrors = Object.entries(values!).reduce((acc, [field, value]) => {
+      const name = field as keyof T;
+      const isFieldValid = validators[name]?.validator(String(value)) ?? true;
+      acc[name] = !isFieldValid ? validators[name]!.message : undefined;
+      return acc;
+    }, {} as TErrorState<T>);
+
+    setErrors(initialErrors);
+  }, []);
+
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
     const input = evt.target;
     const { value } = input;
@@ -41,5 +52,9 @@ export function useFormWithValidation<T>(
     setIsValid(isFieldValid);
   };
 
-  return { values, handleChange, errors, isValid };
+  const isErrors = (): boolean => {
+    return Object.values(errors).some((error) => error !== undefined);
+  };
+
+  return { values, handleChange, errors, isErrors };
 }

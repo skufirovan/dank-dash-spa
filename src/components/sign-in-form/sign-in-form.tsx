@@ -1,10 +1,10 @@
 import { FormEvent, useLayoutEffect, useRef } from 'react';
 import { useDispatch, useSelector } from '@store';
-import { formSelector, setFormValue } from '@services/slices/form';
+import { formSelector, setFormValue } from '@services/slices/auth-form';
 import { isSendingSelector, login, LoginPayload } from '@slices/user';
 import { useFormWithValidation } from '@hooks/useFormWithValidation';
-import { Input } from '@components/ui/input/input';
-import { formValidators } from '@models/form-validator/formValidator';
+import Input from '@components/ui/input/input';
+import { authFormValidators } from '@models/form-validator/formValidator';
 import SubmitButton from '@components/ui/submit-button/submit-button';
 import * as s from './sign-in-form.module.css';
 
@@ -19,10 +19,10 @@ const SignInForm = () => {
     }
   }, []);
 
-  const { values, handleChange, errors, isValid } = useFormWithValidation<LoginPayload>(
+  const { values, handleChange, errors, isErrors } = useFormWithValidation<LoginPayload>(
     formSelector,
     setFormValue,
-    formValidators,
+    authFormValidators,
   );
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -55,7 +55,7 @@ const SignInForm = () => {
           onChange={handleChange}
           aria-invalid={!!errors.password}
         />
-        <SubmitButton className={s.button} disabled={isSending || !isValid}>
+        <SubmitButton className={s.button} disabled={isSending || isErrors()}>
           {isSending ? 'Вход...' : 'Войти'}
         </SubmitButton>
       </form>

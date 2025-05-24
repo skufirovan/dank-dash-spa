@@ -1,0 +1,36 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  position: relative;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 10px;
+}
+
+.modalClose {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: none;
+  border: none;
+  color: #1f2937;
+  font-size: 2rem;
+  transition: transform 0.5s ease;
+  transform: rotate(0deg);
+}
+
+.modalClose:hover {
+  color: #13ba82;
+  transform: rotate(90deg);
+}

@@ -1,0 +1,36 @@
+.form {
+  width: 300px;
+  font-family: Futura PT Light;
+}
+
+.radioContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.label {
+  width: fit-content;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.field {
+  margin: 0;
+}
+
+label[for='dateField'] {
+  margin-top: 24px;
+}
+
+.buttonContainer {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+}
