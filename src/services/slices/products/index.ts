@@ -1,7 +1,16 @@
 import { createAsyncThunk, createSlice, SerializedError } from '@reduxjs/toolkit';
 import { RootState } from '@store';
 import { IProduct } from '@models/IProduct';
-import { getProductsApi } from '@services/catalog-service/catalog-service';
+import { CatalogService } from '@services/catalog-service/catalog-service';
+
+export const fetchProducts = createAsyncThunk('products/fetch', async (_, thunkAPI) => {
+  try {
+    const res = await CatalogService.getProducts();
+    return res;
+  } catch (err) {
+    return thunkAPI.rejectWithValue(err);
+  }
+});
 
 type TProductsState = {
   data: IProduct[];
@@ -14,8 +23,6 @@ const initialState: TProductsState = {
   isLoading: true,
   error: null,
 };
-
-export const fetchProducts = createAsyncThunk('products/fetch', async () => getProductsApi());
 
 const slice = createSlice({
   name: 'products',

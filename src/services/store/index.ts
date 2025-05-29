@@ -11,6 +11,7 @@ import { userReducer } from '@slices/user';
 import { authFormReducer } from '@services/slices/auth-form';
 import { cartReducer } from '@services/slices/cart';
 import { orderFormReducer } from '@services/slices/order-form';
+import { orderReducer } from '@services/slices/order';
 import { productsReducer } from '../slices/products';
 
 const rootReducer = combineReducers({
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   authForm: authFormReducer,
   orderForm: orderFormReducer,
   cart: cartReducer,
+  order: orderReducer,
 });
 
 export const store = configureStore({

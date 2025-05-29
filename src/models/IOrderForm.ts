@@ -1,11 +1,10 @@
 export interface IUserInfoForm {
-  name: string;
-  phone: string;
-  email: string;
+  customerName: string;
+  customerPhone: string;
 }
 
 export interface IOrderInfoForm {
-  address: string;
+  customerAddress: string;
   deliveryDate: string;
   paymentMethod: 'CASH' | 'CARD';
 }
