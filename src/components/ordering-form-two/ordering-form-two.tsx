@@ -11,6 +11,7 @@ import { IOrderInfoForm } from '@models/IOrderForm';
 import Input from '@components/ui/input/input';
 import SubmitButton from '@components/ui/submit-button/submit-button';
 import Button from '@components/ui/button/button';
+import { clearCart } from '@services/slices/cart';
 import * as s from './ordering-form-two.module.css';
 
 type OrderingFormTwoProps = {
@@ -57,6 +58,7 @@ const OrderingFormTwo = ({ onBack, onClose }: OrderingFormTwoProps) => {
       orderComposition,
     };
     dispatch(order(orderData));
+    dispatch(clearCart());
     onClose();
   };
 

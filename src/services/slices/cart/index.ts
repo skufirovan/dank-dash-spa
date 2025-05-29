@@ -48,6 +48,11 @@ const slice = createSlice({
         state.quantity -= 1;
       }
     },
+    clearCart: (state) => {
+      state.products = [];
+      state.price = 0;
+      state.quantity = 0;
+    },
   },
   selectors: {
     productsSelector: (state) => state.products,
@@ -60,5 +65,5 @@ export const selectQuantityById = (id: string) => (state: RootState) =>
   state.cart.products.find((item) => item.id === id)?.quantity ?? 0;
 
 export const { productsSelector, priceSelector, quantitySelector } = slice.selectors;
-export const { addToCart, removeFromCart } = slice.actions;
+export const { addToCart, removeFromCart, clearCart } = slice.actions;
 export const cartReducer = slice.reducer;
