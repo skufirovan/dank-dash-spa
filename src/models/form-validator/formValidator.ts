@@ -16,22 +16,18 @@ export const authFormValidators = {
 };
 
 export const userInfoFormValidators = {
-  name: {
+  customerName: {
     validator: (value: string) => value.length > 2,
     message: 'Укажите Ваше имя',
   },
-  phone: {
+  customerPhone: {
     validator: (value: string) => PHONE_REGEX.test(value),
     message: 'Укажите номер, начиная с +7',
-  },
-  email: {
-    validator: (value: string) => EMAIL_REGEX.test(value),
-    message: 'Укажите корректный email',
   },
 };
 
 export const orderInfoFormValidators = {
-  address: {
+  customerAddress: {
     validator: (value: string) => true,
     message: 'Укажите адрес',
   },

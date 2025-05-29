@@ -1,7 +1,5 @@
 import { SyntheticEvent, useLayoutEffect, useRef } from 'react';
 import { useFormWithValidation } from '@hooks/useFormWithValidation';
-import { useDispatch, useSelector } from '@services/store';
-import { userSelector } from '@services/slices/user';
 import { firstFormSelector, setFisrtFormValue } from '@services/slices/order-form';
 import { userInfoFormValidators } from '@models/form-validator/formValidator';
 import { IUserInfoForm } from '@models/IOrderForm';
@@ -15,10 +13,6 @@ type OrderingFormOneProps = {
 
 const OrderingFormOne = ({ onNext }: OrderingFormOneProps) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const userEmail = useSelector(userSelector)?.email;
-  const dispatch = useDispatch();
-
-  if (userEmail) dispatch(setFisrtFormValue({ field: 'email', value: userEmail }));
 
   useLayoutEffect(() => {
     if (inputRef.current) {
@@ -43,29 +37,20 @@ const OrderingFormOne = ({ onNext }: OrderingFormOneProps) => {
         <Input
           inputRef={inputRef}
           type="text"
-          name="name"
-          id="name"
+          name="customerName"
+          id="customerName"
           label="Имя"
-          value={values.name}
-          error={errors.name}
+          value={values.customerName}
+          error={errors.customerName}
           onChange={handleChange}
         />
         <Input
           type="tel"
-          name="phone"
-          id="phone"
+          name="customerPhone"
+          id="customerPhone"
           label="Телефон"
-          value={values.phone}
-          error={errors.phone}
-          onChange={handleChange}
-        />
-        <Input
-          type="email"
-          name="email"
-          id="email"
-          label="Почта"
-          value={values.email || userEmail}
-          error={errors.email}
+          value={values.customerPhone}
+          error={errors.customerPhone}
           onChange={handleChange}
         />
         <div className={s.buttonContainer}>
