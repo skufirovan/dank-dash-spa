@@ -10,12 +10,11 @@ type TOrderFormState = {
 
 const initialState: TOrderFormState = {
   stepOneForm: {
-    name: '',
-    phone: '',
-    email: '',
+    customerName: '',
+    customerPhone: '',
   },
   stepTwoForm: {
-    address: '',
+    customerAddress: '',
     deliveryDate: '',
     paymentMethod: 'CASH',
   },

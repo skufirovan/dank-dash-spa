@@ -49,7 +49,7 @@ export const CartPage = () => {
       {step !== null && (
         <Modal onClose={closeModal}>
           {step === 0 && <OrderingFormOne onNext={() => setStep(1)} />}
-          {step === 1 && <OrderingFormTwo onBack={() => setStep(0)} />}
+          {step === 1 && <OrderingFormTwo onBack={() => setStep(0)} onClose={closeModal} />}
         </Modal>
       )}
     </section>

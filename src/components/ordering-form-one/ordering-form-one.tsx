@@ -37,29 +37,20 @@ const OrderingFormOne = ({ onNext }: OrderingFormOneProps) => {
         <Input
           inputRef={inputRef}
           type="text"
-          name="name"
-          id="name"
+          name="customerName"
+          id="customerName"
           label="Имя"
-          value={values.name}
-          error={errors.name}
+          value={values.customerName}
+          error={errors.customerName}
           onChange={handleChange}
         />
         <Input
           type="tel"
-          name="phone"
-          id="phone"
+          name="customerPhone"
+          id="customerPhone"
           label="Телефон"
-          value={values.phone}
-          error={errors.phone}
-          onChange={handleChange}
-        />
-        <Input
-          type="email"
-          name="email"
-          id="email"
-          label="Почта"
-          value={values.email}
-          error={errors.email}
+          value={values.customerPhone}
+          error={errors.customerPhone}
           onChange={handleChange}
         />
         <div className={s.buttonContainer}>
