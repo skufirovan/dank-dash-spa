@@ -49,3 +49,22 @@
   background-color: rgb(5, 150, 105);
   transform: scale(1.05, 1.05);
 }
+
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 400px;
+  }
+
+  .container {
+    margin-left: 0;
+    padding: 2rem 3rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}

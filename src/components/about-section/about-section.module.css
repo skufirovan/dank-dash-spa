@@ -1,5 +1,5 @@
 .about {
-  margin: 0 auto 200px;
+  margin: 0 auto 100px;
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -63,4 +63,21 @@
   font-family: 'Futura PT Light';
   font-size: 1.2rem;
   line-height: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .item {
+    margin-bottom: 24px;
+    max-width: 60%;
+  }
+
+  .description {
+    margin: 0 0 2rem;
+  }
 }

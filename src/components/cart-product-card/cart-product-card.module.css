@@ -1,10 +1,3 @@
-@keyframes slideOut {
-  to {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-}
-
 .product {
   margin-bottom: 18px;
   padding: 1rem 1.5rem;
@@ -85,4 +78,25 @@
 .button:hover {
   background-color: #1f2937;
   color: #fff;
+}
+
+@media screen and (max-width: 500px) {
+  .product {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .price {
+    width: 70%;
+    text-align: end;
+  }
 }

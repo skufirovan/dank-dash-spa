@@ -24,3 +24,9 @@
 .button {
   padding: 0.8rem 1rem;
 }
+
+@media screen and (max-width: 768px) {
+  .cart {
+    width: 90%;
+  }
+}

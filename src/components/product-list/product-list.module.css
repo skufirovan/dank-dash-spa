@@ -26,3 +26,11 @@
   font-family: 'Futura PT Light';
   font-size: 1.5rem;
 }
+
+@media screen and (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: repeat(auto-fill, 230px);
+    gap: 15px;
+    row-gap: 25px;
+  }
+}
